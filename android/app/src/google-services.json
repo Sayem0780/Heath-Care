@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "679744518954",
+    "project_id": "longevity-c2028",
+    "storage_bucket": "longevity-c2028.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679744518954:android:6a695b5a51f146e7f3fc53",
+        "android_client_info": {
+          "package_name": "com.example.taskaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679744518954-gr2u3n4eu0vn90mpa3va506ven1kgobk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4ladBteOilOBGrPGYM5zirGiFI54Vb5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679744518954-gr2u3n4eu0vn90mpa3va506ven1kgobk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
