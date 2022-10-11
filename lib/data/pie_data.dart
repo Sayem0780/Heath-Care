@@ -38,96 +38,79 @@ class _PiEdataState extends State<PiEdata> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("LongivityIn Time",style: TextStyle(fontSize: 30),)),
+        title: Center(child: Text("LongivityIn Time",style: TextStyle(fontSize: 0),)),
       ),
-      body: SingleChildScrollView(
-
+      body: Container(
+        height: 800,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 20,),
-            Container(
-              height: 100,
-                padding: EdgeInsets.symmetric(vertical: 10),
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 20,),
+              Container(
+                height: 100,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  width: double.infinity,
+                  child:  Center(child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Text("Pie Chart",style: TextStyle(fontSize: 50),),
+                  )),
+                ),
+              SizedBox(height: 10,),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 20),
+                height: 300,
                 width: double.infinity,
-                child:  Center(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: Text("Pie Chart",style: TextStyle(fontSize: 50),),
+                child: PieChart(PieChartData(
+                    centerSpaceRadius: 100,
+                    centerSpaceColor: Colors.yellow,
+                    borderData: FlBorderData(show:true),
+                    sections: [
+                      PieChartSectionData(value: double.parse(_employee_livingCost.toString()), color: Colors.blue),
+                      PieChartSectionData(value: double.parse(_employee_medicalCost.toString()), color: Colors.orange),
+                      PieChartSectionData(value: double.parse(_employee_educationCost.toString()), color: Colors.red),
+                      PieChartSectionData(value: double.parse(_employee_vacationCost.toString()), color: Colors.purple),
+                    ]
                 )),
               ),
-            SizedBox(height: 10,),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 20),
-              height: 300,
-              width: double.infinity,
-              child: PieChart(PieChartData(
-                  centerSpaceRadius: 100,
-                  centerSpaceColor: Colors.yellow,
-                  borderData: FlBorderData(show:true),
-                  sections: [
-                    PieChartSectionData(value: double.parse(_employee_livingCost.toString()), color: Colors.blue),
-                    PieChartSectionData(value: double.parse(_employee_medicalCost.toString()), color: Colors.orange),
-                    PieChartSectionData(value: double.parse(_employee_educationCost.toString()), color: Colors.red),
-                    PieChartSectionData(value: double.parse(_employee_vacationCost.toString()), color: Colors.purple),
-                  ]
-              )),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              height: 200,
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Text("Blue For Living Cost: "+_employee_livingCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  height: 200,
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text("Blue For Living Cost: "+_employee_livingCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text("Orange For Medical Cost: "+_employee_medicalCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text("Red For Education Cost: "+_employee_educationCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text("Purpel For Vacation Cost: "+_employee_vacationCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Text("Orange For Medical Cost: "+_employee_medicalCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Text("Red For Education Cost: "+_employee_educationCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Text("Purpel For Vacation Cost: "+_employee_vacationCost.toString(),style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
-                  ),
-                ],
+                ),
               ),
-            ),
 
 
-          ],
-        ),
+            ],
+          ),
       ),
     );
   }
 }
 
 
-/*class Data {
-  final String name;
 
-  final double percent;
-
-  final Color color;
-
-  Data({required this.name, required this.percent, required this.color});
-}
-
-class Covalue {
-  final int a;
-  final int b;
-  final int  c;
-  final int d;
-
-  Covalue({required this.a, required this.b, required this.c,required this.d});
-
-}*/
 
