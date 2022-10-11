@@ -139,13 +139,13 @@ class _AddPage extends State<AddPage> {
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
             var response = await FirebaseCrud.addEmployee(
-                name: _employee_name.text,
-                position: _employee_position.text,
-                contactno: _employee_contact.text,
-                livingCost: double.parse(_employee_livingCost.text),
-                medicalCost: double.parse(_employee_medicalCost.text),
-                educationCost: double.parse(_employee_educationCost.text),
-                vacationCost: double.parse(_employee_vacationCost.text),
+              name: _employee_name.text,
+              position: _employee_position.text,
+              contactno: _employee_contact.text,
+              livingCost: double.parse(_employee_livingCost.text),
+              medicalCost: double.parse(_employee_medicalCost.text),
+              educationCost: double.parse(_employee_educationCost.text),
+              vacationCost: double.parse(_employee_vacationCost.text),
             );
             if (response.code != 200) {
               showDialog(
@@ -180,44 +180,44 @@ class _AddPage extends State<AddPage> {
         title: Center(child: const Text('Longivity')),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Form(
-              key: _formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    nameField,
-                    const SizedBox(height: 25.0),
-                    positionField,
-                    const SizedBox(height: 35.0),
-                    contactField,
-                    const SizedBox(height: 25.0),
-                    livingField,
-                    const SizedBox(height: 25.0),
-                    medicalField,
-                    const SizedBox(height: 25.0),
-                    educationField,
-                    const SizedBox(height: 25.0),
-                    vacationField,
-                    const SizedBox(height: 25.0),
-                    viewListbutton,
-                    const SizedBox(height: 25.0),
-                    SaveButon,
-                    const SizedBox(height: 15.0),
-                  ],
+      body: ListView(
+        children: <Widget>[
+          Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        nameField,
+                        const SizedBox(height: 25.0),
+                        positionField,
+                        const SizedBox(height: 35.0),
+                        contactField,
+                        const SizedBox(height: 25.0),
+                        livingField,
+                        const SizedBox(height: 25.0),
+                        medicalField,
+                        const SizedBox(height: 25.0),
+                        educationField,
+                        const SizedBox(height: 25.0),
+                        vacationField,
+                        const SizedBox(height: 5.0),
+                        viewListbutton,
+                        const SizedBox(height: 5.0),
+                        SaveButon,
+                        const SizedBox(height: 15.0),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ],
-        ),
+              ],
+          ),
+        ],
       ),
     );
   }
